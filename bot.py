@@ -6,9 +6,11 @@ from storage import load_subscriptions, save_subscription, remove_subscription
 import json
 import os
 import jdatetime
+import os
+from dotenv import load_dotenv
 
-TOKEN = ''
-
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -136,4 +138,5 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
+
     main()
