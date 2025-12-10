@@ -4,8 +4,11 @@ import os
 import jdatetime
 from telegram import Bot
 from storage import load_all_subscriptions
+import os
+from dotenv import load_dotenv
 
-TOKEN = ''
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 
 async def send_outage_notifications():
@@ -41,4 +44,5 @@ async def send_outage_notifications():
                 await bot.send_message(chat_id=group_id, text=message)
                 print(f"✅ Sent to {group_id}: {area}")
             except Exception as e:
+
                 print(f"❌ Failed to send to {group_id}: {e}")
