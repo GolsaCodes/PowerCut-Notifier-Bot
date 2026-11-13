@@ -38,9 +38,7 @@ PowerCut-Notifier-Bot/
 ├── utils.py            # Utility functions
 ├── requirements.txt   
 ├── .gitignore         
-├── README.md         
-│
-└── cache/              # Stores daily outage data in JSON format
+└── README.md               
 ```
 
 ## Technologies Used
